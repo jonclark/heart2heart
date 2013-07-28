@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="controller.js"></script>
+    <link rel="stylesheet" href="heart.css">
+  </head>
+  <body>
+    <div>
+      <label>Name:</label>
+      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <hr>
+      <h1>Hello {{yourName}}!</h1>
+    </div>
+    
+        <div ng-controller="TodoCtrl">
+      <span>{{remaining()}} of {{todos.length}} remaining</span>
+      [ <a href="" ng-click="archive()">archive</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText"  size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+
+    <form action="https://healthdata.cigna.com/security/oauth/authorize" method="post">
+    	<br>client_iD: <input name="client_id" type="text" value="38f7d2e9-2197-4acb-8aff-3e7f75e0d065" size="25" />
+    	<br>scope: <input name="client_id" type="text" value="profile_read biometrics_read profile_write biometrics_write" size="75" />
+    	<br>redirect_uri: <input name="client_id" type="text" value="http://127.0.0.1/getAuthToken.html" size="75" />
+    	<br>response_type: <input name="response_type" type="text" value="code" size="25" />
+    	<br><input name="mySubmit" type="submit" value="submit" />
+    </form>
+    
+  </body>
+</html>
