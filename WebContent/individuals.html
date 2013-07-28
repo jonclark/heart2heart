@@ -1,37 +1,17 @@
-<!doctype html>
-<html ng-app="myApp">
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-    <script src="js/angular-resource.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
-    <link rel="stylesheet" href="css/heart.css">
-  </head>
-  <body>
-    <div>
-      <h1>Individuals List!</h1>
-      <hr>
-    </div>
-
-        <div ng-controller="individualListCtrl">
-			<table border="1">
-				<tr>
-					<td>Make Selection</td>
-					<td>ID</td>
-					<td>First Name</td>
-					<td>Last name</td>
-				</tr>
-				<tr ng-repeat="individual in individualList">
-					<td></td>
-					<button ng-click="go('/individual.html/{{individual.id}}')">Load</button>
-					<td>{{individual.id}}</td>
-					<td>{{individual.name.givenName}}</td>
-					<td>{{individual.name.familyName}}</td>
-				</tr>
-			</table>
-	    </div>
-
-
-  </body>
-</html>
+<div>
+	<table border="1">
+		<tr>
+			<td>Make Selection</td>
+			<td>ID</td>
+			<td>First Name</td>
+			<td>Last name</td>
+		</tr>
+		<tr ng-repeat="individual in individualList">
+			<td></td>
+			<button ng-click="go('/individual.html/{{individual.id}}')">Load</button>
+			<td>{{individual.id}}</td>
+			<td>{{individual.name.givenName}}</td>
+			<td>{{individual.name.familyName}}</td>
+		</tr>
+	</table>
+</div>
