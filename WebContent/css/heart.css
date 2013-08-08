@@ -1,6 +1,22 @@
-@CHARSET "UTF-8";
+body, html {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.nav {
+    width: 24%;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}​​
 
-.done-true {
-  text-decoration: line-through;
-  color: grey;
+
+.bigGraph {width:500px;height:500px;float:left;}
+.mediumGraph {width:400px;height:400px;float:left;}
+.smallGraph {width:200px;height:200px;float:left;}
+.chart{
+    display:none;
+    width:400px;
+    height:200px;
 }

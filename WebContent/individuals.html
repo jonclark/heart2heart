@@ -1,4 +1,14 @@
 <div>
+	<p>This tab shows an example of a simple <b>JSON REST Get</b> request. You can see a list below of all users of the Heart2Heart
+	application</p>
+	
+	<div>
+      <label>Name:</label>
+      <input type="text" ng-model="yourName" placeholder="Enter your name here">
+      <hr>
+      <h2>Hello {{yourName}}</h1>
+    </div>
+	
 	<table border="1">
 		<tr>
 			<td>Make Selection</td>
@@ -8,7 +18,6 @@
 		</tr>
 		<tr ng-repeat="individual in individualList">
 			<td></td>
-			<button ng-click="go('/individual.html/{{individual.id}}')">Load</button>
 			<td>{{individual.id}}</td>
 			<td>{{individual.name.givenName}}</td>
 			<td>{{individual.name.familyName}}</td>

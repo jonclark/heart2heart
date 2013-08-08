@@ -1,0 +1,39 @@
+
+<p>Use <b>JSON REST Get</b> to obtain only the BPM value and it date/time. You can see the values in grid form on 
+the left and in a Google Line Chart on the right</p>
+<p>In order to make sure the chart/view does not display before the RESTful data returns, we use
+angular's concept of 'resolve' within the app directive</p>
+
+	<table border="3">
+		<tr>
+			<td>
+				<table border="1">
+					<tr>
+						<td>Index</td>
+						<td>Label</td>
+						<td>Value</td>
+					</tr>
+					
+					<!-- 
+					<tr ng-repeat="biometric in biometricList.result | filter:biometric.datetime={{dt}}">
+					 $scope.chartData.dataTable.K[2].c[0].v
+					 -->
+					 
+					 
+					<tr ng-repeat="data in chartData.dataTable.K">
+						<td>{{$index + 1}}</td>
+						<td>{{data.c[0].v}}</td>
+						<td>{{data.c[1].v}}</td>
+					</tr>
+				</table>
+			</td>
+			<td valign="top" width="610">
+			
+				<div ui-if="chartData.dataTable.K">
+					<div google-chart="LineChart" ng-model="chartData" class="bigGraph" id="myGoogleChart"></div>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+
